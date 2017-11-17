@@ -11,7 +11,7 @@ var FixtureRetriever = function() {
             FixtureParser.parseFixtures(filter(fixtures));
         },
         getFixturesByDate: function(date, filter){
-            var url = 'https://fixture-finder-us.herokuapp.com/fixture-finder/fixtures/'+date+'?';
+            var url = 'https://fixture-finder-us.herokuapp.com/fixture-finder/fixtures/'+date+'?callback=?';
             $('.spinner').fadeIn(1000);
 
             FixtureFinder.setDateWithCurrentLanguage(date, FixtureFinder.currentLanguage);
@@ -21,8 +21,9 @@ var FixtureRetriever = function() {
                 type: 'GET',
                 url: url,
                 async: true,
+                jsonpCallback: 'jsonCallback',
                 contentType: "application/json",
-                dataType: 'json',
+                dataType: 'jsonp',
                 success: function(json) {
                     fixtures = json.fixtures;
                     FixtureParser.parseFixtures(filter(fixtures));
