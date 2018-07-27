@@ -3,13 +3,13 @@
     height: 11px;
     background: url(../resources/flags.png) no-repeat;
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 .flag.flag-ad {background-position: -16px 0}
 .flag.flag-al {background-position: -32px 0}
 .flag.flag-Austria {background-position: -48px 0}
-.flag.flag-ba {background-position: -64px 0}
+.flag.flag-World {background-position: -64px 0}
 .flag.flag-Belgium {background-position: -80px 0}
 .flag.flag-bg {background-position: -96px 0}
 .flag.flag-by {background-position: -112px 0}
@@ -22,7 +22,7 @@
 .flag.flag-Spain {background-position: -96px -11px}
 .flag.flag-EURO {background-position: -112px -11px}
 .flag.flag-Champions {background-position: -112px -11px}
-.flag.flag-Europa {background-position: -112px -11px}
+.flag.flag-Europe {background-position: -64px -66px}
 .flag.flag-fi {background-position: 0 -22px}
 .flag.flag-fo {background-position: -16px -22px}
 .flag.flag-France {background-position: -32px -22px}

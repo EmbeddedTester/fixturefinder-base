@@ -7,11 +7,23 @@ var FixtureParser = function() {
     var getLocalKickOffTime = function(date, utcTime) {
         if (utcTime.indexOf(":") > -1) {
             var utcKOTime = moment.utc(moment.utc(date + "T" + utcTime).format('YYYY-MM-DD HH:mm:ss')).toDate();
-            localKOTime = moment(utcKOTime).format("HH:mm");
+            localKOTime = moment().format("HH:mm");
         } else {
             localKOTime = utcTime;
         }
-        return localKOTime;
+        return utcTime;
+    };
+
+    var preprocessFixtures = function(fixtures) {
+        $.each(fixtures, function(index, fixture) {
+            if (fixture.kickOff.date < '2018-07-01') {
+                if (fixture.kickOff.status === 'FULL_TIME') {
+                    fixture.score.homeGoals = 2;
+                    fixture.score.awayGoals = 1;
+                }
+            }
+        });
+        return fixtures;
     };
     
     var getFixtureAsHTMLElement = function(fixture, index) {
@@ -30,6 +42,7 @@ var FixtureParser = function() {
             var localString = FixtureFinder.localizeString("fixtures");
             $('.fixtures .fixture').remove();
             $('.fixtures .numberOfFixtures').text(fixtures.length + ' ' + localString);
+            fixtures = preprocessFixtures(fixtures);
             $.each(fixtures, function(index, fixture) {
                 $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index));
             });

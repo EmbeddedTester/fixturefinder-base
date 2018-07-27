@@ -12,7 +12,7 @@ var FixtureRetriever = function() {
         },
         getFixturesByDate: function(date, filter){
             var url = 'https://fixture-finder-us.herokuapp.com/fixture-finder/fixtures/'+date+'?callback=?';
-            $('.spinner').fadeIn(1000);
+            $('.spinner').fadeIn(1500);
 
             FixtureFinder.setDateWithCurrentLanguage(date, FixtureFinder.currentLanguage);
             clearOldData();
@@ -20,7 +20,7 @@ var FixtureRetriever = function() {
             $.ajax({
                 type: 'GET',
                 url: url,
-                async: true,
+                async: false,
                 jsonpCallback: 'jsonCallback',
                 contentType: "application/json",
                 dataType: 'jsonp',
@@ -32,7 +32,7 @@ var FixtureRetriever = function() {
                     console.log(json.messages);
                 }
             }).done(function() {
-                $('.spinner').fadeOut(1000);
+                $('.spinner').fadeOut(1500);
             });
         }
     }

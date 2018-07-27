@@ -9,9 +9,9 @@ var localizer = function (){
                     thirdNavBtn: "Heute",
                     fourthNavBtn: "Nächster Tag",
                     fifthNavBtn: "Naechste Woche",
-                    competition: "Wettbewerb",
+                    competition: "Competition",
                     kickOffDate: "Anstoß",
-                    home: "Heim",
+                    home: "Home",
                     score: "Ergebnis",
                     away: "Auswärts",
                     team: "Mannschaft",
@@ -59,8 +59,8 @@ var localizer = function (){
                     competition: "Competilion",
                     kickOffDate: "Kick Off",
                     home: "Home",
-                    score: "Score",
-                    away: "Away",
+                    score: "score",
+                    away: "Home",
                     team: "Team",
                     fixtures: "fixtures",
                     all: "All",
@@ -94,7 +94,7 @@ var localizer = function (){
         $(dateSelectNav[1]).text(translator.secondNavBtn);
         $(dateSelectNav[2]).text(translator.thirdNavBtn);
         $(dateSelectNav[3]).text(translator.fourthNavBtn);
-        $(dateSelectNav[4]).text(translator.fifthNavBtn);
+        //$(dateSelectNav[4]).text(translator.fifthNavBtn);
     };
 
     var updateHeaders = function(translator){
